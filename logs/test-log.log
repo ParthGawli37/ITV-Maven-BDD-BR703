@@ -1,0 +1,176 @@
+2026-04-07 16:28:25 INFO  LoggerUtils:10 - Launched the application
+2026-04-07 16:28:25 INFO  LoggerUtils:10 - I am on the District.in home page
+2026-04-07 16:28:25 INFO  LoggerUtils:10 - Clicked on Search icon
+2026-04-07 16:28:25 INFO  LoggerUtils:10 - I clicked on the Search icon
+2026-04-07 16:28:25 ERROR LoggerUtils:18 - Element is not displayed
+2026-04-07 16:28:25 INFO  LoggerUtils:10 - Clicked on Movies link
+2026-04-07 16:28:25 INFO  LoggerUtils:10 - I clicked on the Movies link
+2026-04-07 16:28:25 INFO  LoggerUtils:10 - Entered Dhurandhar in the search editbox
+2026-04-07 16:28:25 INFO  LoggerUtils:10 - I entered Dhurandhar in the search box
+2026-04-07 16:28:25 INFO  LoggerUtils:10 - Extracted Search Result text as Dhurandhar The Revenge
+2026-04-07 16:28:25 INFO  LoggerUtils:10 - Scenario  failed. Screenshot captured.
+2026-04-07 16:28:25 INFO  LoggerUtils:10 - Closed the browser
+2026-04-07 16:34:58 INFO  LoggerUtils:10 - Launched the application
+2026-04-07 16:34:58 INFO  LoggerUtils:10 - I am on the District.in home page
+2026-04-07 16:34:58 INFO  LoggerUtils:10 - Clicked on Search icon
+2026-04-07 16:34:58 INFO  LoggerUtils:10 - I clicked on the Search icon
+2026-04-07 16:34:58 ERROR LoggerUtils:18 - Element is not displayed
+2026-04-07 16:34:58 INFO  LoggerUtils:10 - Clicked on Movies link
+2026-04-07 16:34:58 INFO  LoggerUtils:10 - I clicked on the Movies link
+2026-04-07 16:34:58 INFO  LoggerUtils:10 - Entered Dhurandhar in the search editbox
+2026-04-07 16:34:58 INFO  LoggerUtils:10 - I entered Dhurandhar in the search box
+2026-04-07 16:34:58 INFO  LoggerUtils:10 - Extracted Search Result text as Dhurandhar The Revenge
+2026-04-07 16:34:58 INFO  LoggerUtils:10 - Scenario  failed. Screenshot captured.
+2026-04-07 16:34:59 INFO  LoggerUtils:10 - Closed the browser
+2026-04-07 16:46:08 INFO  LoggerUtils:10 - Launched the application
+2026-04-07 16:46:08 INFO  LoggerUtils:10 - I am on the District.in home page
+2026-04-07 16:46:08 INFO  LoggerUtils:10 - Clicked on Search icon
+2026-04-07 16:46:08 INFO  LoggerUtils:10 - I clicked on the Search icon
+2026-04-07 16:46:08 ERROR LoggerUtils:18 - Element is not displayed
+2026-04-07 16:46:08 INFO  LoggerUtils:10 - Clicked on Movies link
+2026-04-07 16:46:08 INFO  LoggerUtils:10 - I clicked on the Movies link
+2026-04-07 16:46:08 ERROR LoggerUtils:18 - Element is not displayed
+2026-04-07 16:46:08 INFO  LoggerUtils:10 - Entered Dhurandhar in the search editbox
+2026-04-07 16:46:08 INFO  LoggerUtils:10 - I entered Dhurandhar in the search box
+2026-04-07 16:46:08 INFO  LoggerUtils:10 - Extracted Search Result text as Dhurandhar The Revenge
+2026-04-07 16:46:08 INFO  LoggerUtils:14 - Search Result is showing the correct Movie details
+2026-04-07 16:46:09 INFO  LoggerUtils:10 - Closed the browser
+2026-04-07 16:46:14 INFO  LoggerUtils:10 - Launched the application
+2026-04-07 16:46:14 INFO  LoggerUtils:10 - I am on the District.in home page
+2026-04-07 16:46:14 INFO  LoggerUtils:10 - Clicked on Search icon
+2026-04-07 16:46:14 INFO  LoggerUtils:10 - I clicked on the Search icon
+2026-04-07 16:46:14 ERROR LoggerUtils:18 - Element is not displayed
+2026-04-07 16:46:14 INFO  LoggerUtils:10 - Clicked on Movies link
+2026-04-07 16:46:14 INFO  LoggerUtils:10 - I clicked on the Movies link
+2026-04-07 16:46:14 ERROR LoggerUtils:18 - Element is not displayed
+2026-04-07 16:46:14 INFO  LoggerUtils:10 - Entered Hoppers in the search editbox
+2026-04-07 16:46:14 INFO  LoggerUtils:10 - I entered Hoppers in the search box
+2026-04-07 16:46:14 INFO  LoggerUtils:10 - Extracted Search Result text as Dhurandhar The Revenge
+2026-04-07 16:46:14 INFO  LoggerUtils:10 - Scenario  failed. Screenshot captured.
+2026-04-07 16:46:15 INFO  LoggerUtils:10 - Closed the browser
+2026-04-07 16:46:23 INFO  LoggerUtils:10 - Launched the application
+2026-04-07 16:46:23 INFO  LoggerUtils:10 - I am on the District.in home page
+2026-04-07 16:46:23 INFO  LoggerUtils:10 - Clicked on Search icon
+2026-04-07 16:46:23 INFO  LoggerUtils:10 - I clicked on the Search icon
+2026-04-07 16:46:23 ERROR LoggerUtils:18 - Element is not displayed
+2026-04-07 16:46:23 INFO  LoggerUtils:10 - Clicked on Movies link
+2026-04-07 16:46:23 INFO  LoggerUtils:10 - I clicked on the Movies link
+2026-04-07 16:46:23 ERROR LoggerUtils:18 - Element is not displayed
+2026-04-07 16:46:23 INFO  LoggerUtils:10 - Entered Super Duperr in the search editbox
+2026-04-07 16:46:23 INFO  LoggerUtils:10 - I entered Super Duperr in the search box
+2026-04-07 16:46:24 INFO  LoggerUtils:10 - Extracted Search Result text as Dhurandhar The Revenge
+2026-04-07 16:46:24 INFO  LoggerUtils:10 - Scenario  failed. Screenshot captured.
+2026-04-07 16:46:24 INFO  LoggerUtils:10 - Closed the browser
+2026-04-07 16:51:40 INFO  LoggerUtils:10 - Launched the application
+2026-04-07 16:51:40 INFO  LoggerUtils:10 - I am on the District.in home page
+2026-04-07 16:51:41 INFO  LoggerUtils:10 - Clicked on Search icon
+2026-04-07 16:51:41 INFO  LoggerUtils:10 - I clicked on the Search icon
+2026-04-07 16:51:41 ERROR LoggerUtils:18 - Element is not displayed
+2026-04-07 16:51:41 INFO  LoggerUtils:10 - Clicked on Movies link
+2026-04-07 16:51:41 INFO  LoggerUtils:10 - I clicked on the Movies link
+2026-04-07 16:51:41 INFO  LoggerUtils:10 - Entered Dhurandhar in the search editbox
+2026-04-07 16:51:41 INFO  LoggerUtils:10 - I entered Dhurandhar in the search box
+2026-04-07 16:51:44 INFO  LoggerUtils:10 - Extracted Search Result text as Dhurandhar The Revenge
+2026-04-07 16:51:44 INFO  LoggerUtils:14 - Search Result is showing the correct Movie details
+2026-04-07 16:51:44 INFO  LoggerUtils:10 - Closed the browser
+2026-04-07 16:51:49 INFO  LoggerUtils:10 - Launched the application
+2026-04-07 16:51:49 INFO  LoggerUtils:10 - I am on the District.in home page
+2026-04-07 16:51:49 INFO  LoggerUtils:10 - Clicked on Search icon
+2026-04-07 16:51:49 INFO  LoggerUtils:10 - I clicked on the Search icon
+2026-04-07 16:51:49 ERROR LoggerUtils:18 - Element is not displayed
+2026-04-07 16:51:49 INFO  LoggerUtils:10 - Clicked on Movies link
+2026-04-07 16:51:49 INFO  LoggerUtils:10 - I clicked on the Movies link
+2026-04-07 16:51:49 ERROR LoggerUtils:18 - Element is not displayed
+2026-04-07 16:51:49 INFO  LoggerUtils:10 - Entered Hoppers in the search editbox
+2026-04-07 16:51:49 INFO  LoggerUtils:10 - I entered Hoppers in the search box
+2026-04-07 16:51:52 INFO  LoggerUtils:10 - Extracted Search Result text as Dhurandhar The Revenge
+2026-04-07 16:51:53 INFO  LoggerUtils:10 - Scenario  failed. Screenshot captured.
+2026-04-07 16:51:53 INFO  LoggerUtils:10 - Closed the browser
+2026-04-07 16:52:02 INFO  LoggerUtils:10 - Launched the application
+2026-04-07 16:52:02 INFO  LoggerUtils:10 - I am on the District.in home page
+2026-04-07 16:52:02 INFO  LoggerUtils:10 - Clicked on Search icon
+2026-04-07 16:52:02 INFO  LoggerUtils:10 - I clicked on the Search icon
+2026-04-07 16:52:02 ERROR LoggerUtils:18 - Element is not displayed
+2026-04-07 16:52:02 INFO  LoggerUtils:10 - Clicked on Movies link
+2026-04-07 16:52:02 INFO  LoggerUtils:10 - I clicked on the Movies link
+2026-04-07 16:52:02 ERROR LoggerUtils:18 - Element is not displayed
+2026-04-07 16:52:02 INFO  LoggerUtils:10 - Entered Super Duperr in the search editbox
+2026-04-07 16:52:02 INFO  LoggerUtils:10 - I entered Super Duperr in the search box
+2026-04-07 16:52:05 INFO  LoggerUtils:10 - Extracted Search Result text as Dhurandhar The Revenge
+2026-04-07 16:52:06 INFO  LoggerUtils:10 - Scenario  failed. Screenshot captured.
+2026-04-07 16:52:06 INFO  LoggerUtils:10 - Closed the browser
+2026-04-07 16:57:17 INFO  LoggerUtils:10 - Launched the application
+2026-04-07 16:57:17 INFO  LoggerUtils:10 - I am on the District.in home page
+2026-04-07 16:57:18 INFO  LoggerUtils:10 - Clicked on Search icon
+2026-04-07 16:57:18 INFO  LoggerUtils:10 - I clicked on the Search icon
+2026-04-07 16:57:18 ERROR LoggerUtils:18 - Element is not displayed
+2026-04-07 16:57:18 INFO  LoggerUtils:10 - Clicked on Movies link
+2026-04-07 16:57:18 INFO  LoggerUtils:10 - I clicked on the Movies link
+2026-04-07 16:57:18 ERROR LoggerUtils:18 - Element is not displayed
+2026-04-07 16:57:18 INFO  LoggerUtils:10 - Entered Dhurandhar in the search editbox
+2026-04-07 16:57:18 INFO  LoggerUtils:10 - I entered Dhurandhar in the search box
+2026-04-07 16:57:22 INFO  LoggerUtils:10 - Extracted Search Result text as Dhurandhar The Revenge
+2026-04-07 16:57:22 INFO  LoggerUtils:14 - Search Result is showing the correct Movie details
+2026-04-07 16:57:22 INFO  LoggerUtils:10 - Closed the browser
+2026-04-07 16:57:29 INFO  LoggerUtils:10 - Launched the application
+2026-04-07 16:57:29 INFO  LoggerUtils:10 - I am on the District.in home page
+2026-04-07 16:57:29 INFO  LoggerUtils:10 - Clicked on Search icon
+2026-04-07 16:57:29 INFO  LoggerUtils:10 - I clicked on the Search icon
+2026-04-07 16:57:30 ERROR LoggerUtils:18 - Element is not displayed
+2026-04-07 16:57:30 INFO  LoggerUtils:10 - Clicked on Movies link
+2026-04-07 16:57:30 INFO  LoggerUtils:10 - I clicked on the Movies link
+2026-04-07 16:57:30 INFO  LoggerUtils:10 - Entered Hoppers in the search editbox
+2026-04-07 16:57:30 INFO  LoggerUtils:10 - I entered Hoppers in the search box
+2026-04-07 16:57:34 INFO  LoggerUtils:10 - Extracted Search Result text as Hoppers
+2026-04-07 16:57:34 INFO  LoggerUtils:14 - Search Result is showing the correct Movie details
+2026-04-07 16:57:34 INFO  LoggerUtils:10 - Closed the browser
+2026-04-07 16:57:39 INFO  LoggerUtils:10 - Launched the application
+2026-04-07 16:57:39 INFO  LoggerUtils:10 - I am on the District.in home page
+2026-04-07 16:57:39 INFO  LoggerUtils:10 - Clicked on Search icon
+2026-04-07 16:57:39 INFO  LoggerUtils:10 - I clicked on the Search icon
+2026-04-07 16:57:39 ERROR LoggerUtils:18 - Element is not displayed
+2026-04-07 16:57:39 INFO  LoggerUtils:10 - Clicked on Movies link
+2026-04-07 16:57:39 INFO  LoggerUtils:10 - I clicked on the Movies link
+2026-04-07 16:57:39 INFO  LoggerUtils:10 - Entered Super Duperr in the search editbox
+2026-04-07 16:57:39 INFO  LoggerUtils:10 - I entered Super Duperr in the search box
+2026-04-07 16:57:43 INFO  LoggerUtils:10 - Extracted Search Result text as Super Duperr
+2026-04-07 16:57:44 INFO  LoggerUtils:10 - Scenario  failed. Screenshot captured.
+2026-04-07 16:57:44 INFO  LoggerUtils:10 - Closed the browser
+2026-04-09 15:21:18 INFO  LoggerUtils:10 - Launched the application
+2026-04-09 15:21:18 INFO  LoggerUtils:10 - I am on the District.in home page
+2026-04-09 15:21:18 INFO  LoggerUtils:10 - Clicked on Search icon
+2026-04-09 15:21:18 INFO  LoggerUtils:10 - I clicked on the Search icon
+2026-04-09 15:21:18 ERROR LoggerUtils:18 - Element is not displayed
+2026-04-09 15:21:18 INFO  LoggerUtils:10 - Clicked on Movies link
+2026-04-09 15:21:18 INFO  LoggerUtils:10 - I clicked on the Movies link
+2026-04-09 15:21:19 INFO  LoggerUtils:10 - Entered Dhurandhar in the search editbox
+2026-04-09 15:21:19 INFO  LoggerUtils:10 - I entered Dhurandhar in the search box
+2026-04-09 15:21:23 INFO  LoggerUtils:10 - Extracted Search Result text as Dhurandhar The Revenge
+2026-04-09 15:21:23 INFO  LoggerUtils:14 - Search Result is showing the correct Movie details
+2026-04-09 15:21:23 INFO  LoggerUtils:10 - Closed the browser
+2026-04-09 15:21:28 INFO  LoggerUtils:10 - Launched the application
+2026-04-09 15:21:28 INFO  LoggerUtils:10 - I am on the District.in home page
+2026-04-09 15:21:28 INFO  LoggerUtils:10 - Clicked on Search icon
+2026-04-09 15:21:28 INFO  LoggerUtils:10 - I clicked on the Search icon
+2026-04-09 15:21:28 ERROR LoggerUtils:18 - Element is not displayed
+2026-04-09 15:21:28 INFO  LoggerUtils:10 - Clicked on Movies link
+2026-04-09 15:21:28 INFO  LoggerUtils:10 - I clicked on the Movies link
+2026-04-09 15:21:28 ERROR LoggerUtils:18 - Element is not displayed
+2026-04-09 15:21:28 INFO  LoggerUtils:10 - Entered Hoppers in the search editbox
+2026-04-09 15:21:28 INFO  LoggerUtils:10 - I entered Hoppers in the search box
+2026-04-09 15:21:32 INFO  LoggerUtils:10 - Extracted Search Result text as Dhurandhar The Revenge
+2026-04-09 15:21:32 INFO  LoggerUtils:10 - Scenario  failed. Screenshot captured.
+2026-04-09 15:21:32 INFO  LoggerUtils:10 - Closed the browser
+2026-04-09 15:21:39 INFO  LoggerUtils:10 - Launched the application
+2026-04-09 15:21:39 INFO  LoggerUtils:10 - I am on the District.in home page
+2026-04-09 15:21:39 INFO  LoggerUtils:10 - Clicked on Search icon
+2026-04-09 15:21:39 INFO  LoggerUtils:10 - I clicked on the Search icon
+2026-04-09 15:21:39 ERROR LoggerUtils:18 - Element is not displayed
+2026-04-09 15:21:39 INFO  LoggerUtils:10 - Clicked on Movies link
+2026-04-09 15:21:39 INFO  LoggerUtils:10 - I clicked on the Movies link
+2026-04-09 15:21:39 ERROR LoggerUtils:18 - Element is not displayed
+2026-04-09 15:21:39 INFO  LoggerUtils:10 - Entered Super Duperr in the search editbox
+2026-04-09 15:21:39 INFO  LoggerUtils:10 - I entered Super Duperr in the search box
+2026-04-09 15:21:43 INFO  LoggerUtils:10 - Extracted Search Result text as Dhurandhar The Revenge
+2026-04-09 15:21:43 INFO  LoggerUtils:10 - Scenario  failed. Screenshot captured.
+2026-04-09 15:21:44 INFO  LoggerUtils:10 - Closed the browser

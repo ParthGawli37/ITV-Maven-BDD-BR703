@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="runners.Runner" time="33.844" tests="3" errors="0" skipped="0" failures="1">
+  <properties>
+    <property name="java.specification.version" value="25"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\parth\eclipse-workspace\Maven-BDD-ITV\target\test-classes;C:\Users\parth\eclipse-workspace\Maven-BDD-ITV\target\classes;C:\Users\parth\.m2\repository\org\seleniumhq\selenium\selenium-java\4.41.0\selenium-java-4.41.0.jar;C:\Users\parth\.m2\repository\org\seleniumhq\selenium\selenium-api\4.41.0\selenium-api-4.41.0.jar;C:\Users\parth\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\parth\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.41.0\selenium-chrome-driver-4.41.0.jar;C:\Users\parth\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\parth\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.41.0\selenium-chromium-driver-4.41.0.jar;C:\Users\parth\.m2\repository\org\seleniumhq\selenium\selenium-json\4.41.0\selenium-json-4.41.0.jar;C:\Users\parth\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.41.0\selenium-manager-4.41.0.jar;C:\Users\parth\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v143\4.41.0\selenium-devtools-v143-4.41.0.jar;C:\Users\parth\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v144\4.41.0\selenium-devtools-v144-4.41.0.jar;C:\Users\parth\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v145\4.41.0\selenium-devtools-v145-4.41.0.jar;C:\Users\parth\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.41.0\selenium-edge-driver-4.41.0.jar;C:\Users\parth\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.41.0\selenium-firefox-driver-4.41.0.jar;C:\Users\parth\.m2\repository\org\seleniumhq\selenium\selenium-http\4.41.0\selenium-http-4.41.0.jar;C:\Users\parth\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.41.0\selenium-ie-driver-4.41.0.jar;C:\Users\parth\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.41.0\selenium-remote-driver-4.41.0.jar;C:\Users\parth\.m2\repository\com\google\guava\guava\33.5.0-jre\guava-33.5.0-jre.jar;C:\Users\parth\.m2\repository\com\google\guava\failureaccess\1.0.3\failureaccess-1.0.3.jar;C:\Users\parth\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\parth\.m2\repository\com\google\errorprone\error_prone_annotations\2.41.0\error_prone_annotations-2.41.0.jar;C:\Users\parth\.m2\repository\com\google\j2objc\j2objc-annotations\3.1\j2objc-annotations-3.1.jar;C:\Users\parth\.m2\repository\io\opentelemetry\opentelemetry-api\1.59.0\opentelemetry-api-1.59.0.jar;C:\Users\parth\.m2\repository\io\opentelemetry\opentelemetry-context\1.59.0\opentelemetry-context-1.59.0.jar;C:\Users\parth\.m2\repository\io\opentelemetry\opentelemetry-common\1.59.0\opentelemetry-common-1.59.0.jar;C:\Users\parth\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.59.0\opentelemetry-exporter-logging-1.59.0.jar;C:\Users\parth\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.59.0\opentelemetry-sdk-common-1.59.0.jar;C:\Users\parth\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.59.0\opentelemetry-sdk-extension-autoconfigure-spi-1.59.0.jar;C:\Users\parth\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.59.0\opentelemetry-sdk-extension-autoconfigure-1.59.0.jar;C:\Users\parth\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.59.0\opentelemetry-sdk-trace-1.59.0.jar;C:\Users\parth\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.59.0\opentelemetry-sdk-1.59.0.jar;C:\Users\parth\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.59.0\opentelemetry-sdk-metrics-1.59.0.jar;C:\Users\parth\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.59.0\opentelemetry-sdk-logs-1.59.0.jar;C:\Users\parth\.m2\repository\net\bytebuddy\byte-buddy\1.18.5\byte-buddy-1.18.5.jar;C:\Users\parth\.m2\repository\org\seleniumhq\selenium\selenium-os\4.41.0\selenium-os-4.41.0.jar;C:\Users\parth\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.41.0\selenium-safari-driver-4.41.0.jar;C:\Users\parth\.m2\repository\org\seleniumhq\selenium\selenium-support\4.41.0\selenium-support-4.41.0.jar;C:\Users\parth\.m2\repository\org\testng\testng\7.12.0\testng-7.12.0.jar;C:\Users\parth\.m2\repository\org\slf4j\slf4j-api\2.0.16\slf4j-api-2.0.16.jar;C:\Users\parth\.m2\repository\org\jcommander\jcommander\1.83\jcommander-1.83.jar;C:\Users\parth\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;C:\Users\parth\.m2\repository\org\apache\logging\log4j\log4j-core\2.25.4\log4j-core-2.25.4.jar;C:\Users\parth\.m2\repository\org\apache\logging\log4j\log4j-api\2.25.4\log4j-api-2.25.4.jar;C:\Users\parth\.m2\repository\commons-io\commons-io\2.21.0\commons-io-2.21.0.jar;C:\Users\parth\.m2\repository\io\cucumber\cucumber-java\7.34.3\cucumber-java-7.34.3.jar;C:\Users\parth\.m2\repository\io\cucumber\cucumber-core\7.34.3\cucumber-core-7.34.3.jar;C:\Users\parth\.m2\repository\io\cucumber\cucumber-gherkin\7.34.3\cucumber-gherkin-7.34.3.jar;C:\Users\parth\.m2\repository\io\cucumber\cucumber-gherkin-messages\7.34.3\cucumber-gherkin-messages-7.34.3.jar;C:\Users\parth\.m2\repository\io\cucumber\gherkin\36.1.0\gherkin-36.1.0.jar;C:\Users\parth\.m2\repository\io\cucumber\messages\30.1.0\messages-30.1.0.jar;C:\Users\parth\.m2\repository\io\cucumber\messages-ndjson\0.3.2\messages-ndjson-0.3.2.jar;C:\Users\parth\.m2\repository\io\cucumber\pretty-formatter\2.4.1\pretty-formatter-2.4.1.jar;C:\Users\parth\.m2\repository\io\cucumber\query\14.7.0\query-14.7.0.jar;C:\Users\parth\.m2\repository\io\cucumber\teamcity-formatter\0.2.0\teamcity-formatter-0.2.0.jar;C:\Users\parth\.m2\repository\io\cucumber\testng-xml-formatter\0.7.0\testng-xml-formatter-0.7.0.jar;C:\Users\parth\.m2\repository\io\cucumber\usage-formatter\0.1.0\usage-formatter-0.1.0.jar;C:\Users\parth\.m2\repository\io\cucumber\tag-expressions\8.1.0\tag-expressions-8.1.0.jar;C:\Users\parth\.m2\repository\io\cucumber\cucumber-expressions\18.1.0\cucumber-expressions-18.1.0.jar;C:\Users\parth\.m2\repository\io\cucumber\cucumber-json-formatter\0.3.2\cucumber-json-formatter-0.3.2.jar;C:\Users\parth\.m2\repository\io\cucumber\datatable\7.34.3\datatable-7.34.3.jar;C:\Users\parth\.m2\repository\io\cucumber\cucumber-plugin\7.34.3\cucumber-plugin-7.34.3.jar;C:\Users\parth\.m2\repository\io\cucumber\docstring\7.34.3\docstring-7.34.3.jar;C:\Users\parth\.m2\repository\io\cucumber\html-formatter\22.3.0\html-formatter-22.3.0.jar;C:\Users\parth\.m2\repository\io\cucumber\junit-xml-formatter\0.11.0\junit-xml-formatter-0.11.0.jar;C:\Users\parth\.m2\repository\io\cucumber\ci-environment\12.0.0\ci-environment-12.0.0.jar;C:\Users\parth\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\parth\.m2\repository\io\cucumber\cucumber-testng\7.34.3\cucumber-testng-7.34.3.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Asia/Calcutta"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="25"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="IN"/>
+    <property name="sun.boot.library.path" value="C:\Program Files (x86)\Java\jdk-25.0.2\bin"/>
+    <property name="sun.java.command" value="C:\Users\parth\AppData\Local\Temp\surefire13592400950494518320\surefirebooter-20260407165710399_3.jar C:\Users\parth\AppData\Local\Temp\surefire13592400950494518320 2026-04-07T16-57-10_266-jvmRun1 surefire-20260407165710399_1tmp surefire_0-20260407165710399_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\parth\eclipse-workspace\Maven-BDD-ITV\target\test-classes;C:\Users\parth\eclipse-workspace\Maven-BDD-ITV\target\classes;C:\Users\parth\.m2\repository\org\seleniumhq\selenium\selenium-java\4.41.0\selenium-java-4.41.0.jar;C:\Users\parth\.m2\repository\org\seleniumhq\selenium\selenium-api\4.41.0\selenium-api-4.41.0.jar;C:\Users\parth\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\parth\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.41.0\selenium-chrome-driver-4.41.0.jar;C:\Users\parth\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\parth\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.41.0\selenium-chromium-driver-4.41.0.jar;C:\Users\parth\.m2\repository\org\seleniumhq\selenium\selenium-json\4.41.0\selenium-json-4.41.0.jar;C:\Users\parth\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.41.0\selenium-manager-4.41.0.jar;C:\Users\parth\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v143\4.41.0\selenium-devtools-v143-4.41.0.jar;C:\Users\parth\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v144\4.41.0\selenium-devtools-v144-4.41.0.jar;C:\Users\parth\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v145\4.41.0\selenium-devtools-v145-4.41.0.jar;C:\Users\parth\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.41.0\selenium-edge-driver-4.41.0.jar;C:\Users\parth\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.41.0\selenium-firefox-driver-4.41.0.jar;C:\Users\parth\.m2\repository\org\seleniumhq\selenium\selenium-http\4.41.0\selenium-http-4.41.0.jar;C:\Users\parth\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.41.0\selenium-ie-driver-4.41.0.jar;C:\Users\parth\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.41.0\selenium-remote-driver-4.41.0.jar;C:\Users\parth\.m2\repository\com\google\guava\guava\33.5.0-jre\guava-33.5.0-jre.jar;C:\Users\parth\.m2\repository\com\google\guava\failureaccess\1.0.3\failureaccess-1.0.3.jar;C:\Users\parth\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\parth\.m2\repository\com\google\errorprone\error_prone_annotations\2.41.0\error_prone_annotations-2.41.0.jar;C:\Users\parth\.m2\repository\com\google\j2objc\j2objc-annotations\3.1\j2objc-annotations-3.1.jar;C:\Users\parth\.m2\repository\io\opentelemetry\opentelemetry-api\1.59.0\opentelemetry-api-1.59.0.jar;C:\Users\parth\.m2\repository\io\opentelemetry\opentelemetry-context\1.59.0\opentelemetry-context-1.59.0.jar;C:\Users\parth\.m2\repository\io\opentelemetry\opentelemetry-common\1.59.0\opentelemetry-common-1.59.0.jar;C:\Users\parth\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.59.0\opentelemetry-exporter-logging-1.59.0.jar;C:\Users\parth\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.59.0\opentelemetry-sdk-common-1.59.0.jar;C:\Users\parth\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.59.0\opentelemetry-sdk-extension-autoconfigure-spi-1.59.0.jar;C:\Users\parth\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.59.0\opentelemetry-sdk-extension-autoconfigure-1.59.0.jar;C:\Users\parth\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.59.0\opentelemetry-sdk-trace-1.59.0.jar;C:\Users\parth\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.59.0\opentelemetry-sdk-1.59.0.jar;C:\Users\parth\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.59.0\opentelemetry-sdk-metrics-1.59.0.jar;C:\Users\parth\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.59.0\opentelemetry-sdk-logs-1.59.0.jar;C:\Users\parth\.m2\repository\net\bytebuddy\byte-buddy\1.18.5\byte-buddy-1.18.5.jar;C:\Users\parth\.m2\repository\org\seleniumhq\selenium\selenium-os\4.41.0\selenium-os-4.41.0.jar;C:\Users\parth\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.41.0\selenium-safari-driver-4.41.0.jar;C:\Users\parth\.m2\repository\org\seleniumhq\selenium\selenium-support\4.41.0\selenium-support-4.41.0.jar;C:\Users\parth\.m2\repository\org\testng\testng\7.12.0\testng-7.12.0.jar;C:\Users\parth\.m2\repository\org\slf4j\slf4j-api\2.0.16\slf4j-api-2.0.16.jar;C:\Users\parth\.m2\repository\org\jcommander\jcommander\1.83\jcommander-1.83.jar;C:\Users\parth\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;C:\Users\parth\.m2\repository\org\apache\logging\log4j\log4j-core\2.25.4\log4j-core-2.25.4.jar;C:\Users\parth\.m2\repository\org\apache\logging\log4j\log4j-api\2.25.4\log4j-api-2.25.4.jar;C:\Users\parth\.m2\repository\commons-io\commons-io\2.21.0\commons-io-2.21.0.jar;C:\Users\parth\.m2\repository\io\cucumber\cucumber-java\7.34.3\cucumber-java-7.34.3.jar;C:\Users\parth\.m2\repository\io\cucumber\cucumber-core\7.34.3\cucumber-core-7.34.3.jar;C:\Users\parth\.m2\repository\io\cucumber\cucumber-gherkin\7.34.3\cucumber-gherkin-7.34.3.jar;C:\Users\parth\.m2\repository\io\cucumber\cucumber-gherkin-messages\7.34.3\cucumber-gherkin-messages-7.34.3.jar;C:\Users\parth\.m2\repository\io\cucumber\gherkin\36.1.0\gherkin-36.1.0.jar;C:\Users\parth\.m2\repository\io\cucumber\messages\30.1.0\messages-30.1.0.jar;C:\Users\parth\.m2\repository\io\cucumber\messages-ndjson\0.3.2\messages-ndjson-0.3.2.jar;C:\Users\parth\.m2\repository\io\cucumber\pretty-formatter\2.4.1\pretty-formatter-2.4.1.jar;C:\Users\parth\.m2\repository\io\cucumber\query\14.7.0\query-14.7.0.jar;C:\Users\parth\.m2\repository\io\cucumber\teamcity-formatter\0.2.0\teamcity-formatter-0.2.0.jar;C:\Users\parth\.m2\repository\io\cucumber\testng-xml-formatter\0.7.0\testng-xml-formatter-0.7.0.jar;C:\Users\parth\.m2\repository\io\cucumber\usage-formatter\0.1.0\usage-formatter-0.1.0.jar;C:\Users\parth\.m2\repository\io\cucumber\tag-expressions\8.1.0\tag-expressions-8.1.0.jar;C:\Users\parth\.m2\repository\io\cucumber\cucumber-expressions\18.1.0\cucumber-expressions-18.1.0.jar;C:\Users\parth\.m2\repository\io\cucumber\cucumber-json-formatter\0.3.2\cucumber-json-formatter-0.3.2.jar;C:\Users\parth\.m2\repository\io\cucumber\datatable\7.34.3\datatable-7.34.3.jar;C:\Users\parth\.m2\repository\io\cucumber\cucumber-plugin\7.34.3\cucumber-plugin-7.34.3.jar;C:\Users\parth\.m2\repository\io\cucumber\docstring\7.34.3\docstring-7.34.3.jar;C:\Users\parth\.m2\repository\io\cucumber\html-formatter\22.3.0\html-formatter-22.3.0.jar;C:\Users\parth\.m2\repository\io\cucumber\junit-xml-formatter\0.11.0\junit-xml-formatter-0.11.0.jar;C:\Users\parth\.m2\repository\io\cucumber\ci-environment\12.0.0\ci-environment-12.0.0.jar;C:\Users\parth\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\parth\.m2\repository\io\cucumber\cucumber-testng\7.34.3\cucumber-testng-7.34.3.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\parth"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2026-01-20"/>
+    <property name="java.home" value="C:\Program Files (x86)\Java\jdk-25.0.2"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\parth\eclipse-workspace\Maven-BDD-ITV"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\parth\AppData\Local\Temp\surefire13592400950494518320\surefirebooter-20260407165710399_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="25.0.2+10-LTS-69"/>
+    <property name="user.name" value="parth"/>
+    <property name="stdout.encoding" value="Cp1252"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\parth\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\parth\AppData\Local\Temp\"/>
+    <property name="java.version" value="25.0.2"/>
+    <property name="user.dir" value="C:\Users\parth\eclipse-workspace\Maven-BDD-ITV"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files (x86)\Java\jdk-25.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Users/parth/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.10.v20260205-0638/jre/bin/server;C:/Users/parth/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.10.v20260205-0638/jre/bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files (x86)\Java\jdk-25.0.2\bin;C:\Users\Softwares\apache-maven-3.9.14\bin;C:\Users\parth\AppData\Local\Programs\Python\Launcher\;C:\Users\parth\AppData\Local\Microsoft\WindowsApps;C:\Users\parth\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\parth\AppData\Roaming\npm;C:\WINDOWS\system32;;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="25.0.2+10-LTS-69"/>
+    <property name="stdin.encoding" value="Cp1252"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="69.0"/>
+  </properties>
+  <testcase name="runScenario[&quot;&quot;, &quot;Unknown&quot;](1)" classname="runners.Runner" time="10.727">
+    <system-out><![CDATA[
+@SmokeTest
+&amp#27;[1mScenario Outline:&amp#27;[22m                                         &amp#27;[90m# src/test/resources/features/District.feature:25&amp#27;[39m
+16:57:17 [main] INFO  utils.LoggerUtils - Launched the application
+16:57:17 [main] INFO  utils.LoggerUtils - I am on the District.in home page
+  &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mGiven &amp#27;[22mI am on the District.in home page&amp#27;[39m               &amp#27;[90m# steps.DistrictStep.I_am_on_the_District_in_home_page()&amp#27;[39m
+16:57:18 [main] INFO  utils.LoggerUtils - Clicked on Search icon
+16:57:18 [main] INFO  utils.LoggerUtils - I clicked on the Search icon
+  &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mWhen &amp#27;[22mI click on the Search icon&amp#27;[39m                       &amp#27;[90m# steps.DistrictStep.I_click_on_the_Search_icon()&amp#27;[39m
+16:57:18 [main] ERROR utils.LoggerUtils - Element is not displayed
+16:57:18 [main] INFO  utils.LoggerUtils - Clicked on Movies link
+16:57:18 [main] INFO  utils.LoggerUtils - I clicked on the Movies link
+  &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mAnd &amp#27;[22mI click on the Movies link&amp#27;[39m                        &amp#27;[90m# steps.DistrictStep.I_click_on_the_Movies_link()&amp#27;[39m
+16:57:18 [main] ERROR utils.LoggerUtils - Element is not displayed
+16:57:18 [main] INFO  utils.LoggerUtils - Entered Dhurandhar in the search editbox
+16:57:18 [main] INFO  utils.LoggerUtils - I entered Dhurandhar in the search box
+  &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mAnd &amp#27;[22mI enter &amp#27;[1m"Dhurandhar"&amp#27;[22m in the search box&amp#27;[39m            &amp#27;[90m# steps.DistrictStep.I_enter_in_the_search_box(java.lang.String)&amp#27;[39m
+16:57:22 [main] INFO  utils.LoggerUtils - Extracted Search Result text as Dhurandhar The Revenge
+16:57:22 [main] INFO  utils.LoggerUtils - Search Result is showing the correct Movie details
+  &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mThen &amp#27;[22mI should see the search results for &amp#27;[1m"Dhurandhar"&amp#27;[22m&amp#27;[39m &amp#27;[90m# steps.DistrictStep.I_should_see_the_search_results_for(java.lang.String)&amp#27;[39m
+16:57:22 [main] INFO  utils.LoggerUtils - Closed the browser
+]]></system-out>
+    <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Apr 07, 2026 4:57:12 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 146, returning the closest version; found: 145; Please update to a Selenium version that supports CDP version 146
+]]></system-err>
+  </testcase>
+  <testcase name="runScenario[&quot;&quot;, &quot;Unknown&quot;](2)" classname="runners.Runner" time="11.97">
+    <system-out><![CDATA[
+@SmokeTest
+&amp#27;[1mScenario Outline:&amp#27;[22m                                      &amp#27;[90m# src/test/resources/features/District.feature:26&amp#27;[39m
+16:57:29 [main] INFO  utils.LoggerUtils - Launched the application
+16:57:29 [main] INFO  utils.LoggerUtils - I am on the District.in home page
+  &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mGiven &amp#27;[22mI am on the District.in home page&amp#27;[39m            &amp#27;[90m# steps.DistrictStep.I_am_on_the_District_in_home_page()&amp#27;[39m
+16:57:29 [main] INFO  utils.LoggerUtils - Clicked on Search icon
+16:57:29 [main] INFO  utils.LoggerUtils - I clicked on the Search icon
+  &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mWhen &amp#27;[22mI click on the Search icon&amp#27;[39m                    &amp#27;[90m# steps.DistrictStep.I_click_on_the_Search_icon()&amp#27;[39m
+16:57:30 [main] ERROR utils.LoggerUtils - Element is not displayed
+16:57:30 [main] INFO  utils.LoggerUtils - Clicked on Movies link
+16:57:30 [main] INFO  utils.LoggerUtils - I clicked on the Movies link
+  &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mAnd &amp#27;[22mI click on the Movies link&amp#27;[39m                     &amp#27;[90m# steps.DistrictStep.I_click_on_the_Movies_link()&amp#27;[39m
+16:57:30 [main] INFO  utils.LoggerUtils - Entered Hoppers in the search editbox
+16:57:30 [main] INFO  utils.LoggerUtils - I entered Hoppers in the search box
+  &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mAnd &amp#27;[22mI enter &amp#27;[1m"Hoppers"&amp#27;[22m in the search box&amp#27;[39m            &amp#27;[90m# steps.DistrictStep.I_enter_in_the_search_box(java.lang.String)&amp#27;[39m
+16:57:34 [main] INFO  utils.LoggerUtils - Extracted Search Result text as Hoppers
+16:57:34 [main] INFO  utils.LoggerUtils - Search Result is showing the correct Movie details
+  &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mThen &amp#27;[22mI should see the search results for &amp#27;[1m"Hoppers"&amp#27;[22m&amp#27;[39m &amp#27;[90m# steps.DistrictStep.I_should_see_the_search_results_for(java.lang.String)&amp#27;[39m
+16:57:34 [main] INFO  utils.LoggerUtils - Closed the browser
+]]></system-out>
+    <system-err><![CDATA[Apr 07, 2026 4:57:23 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 146, returning the closest version; found: 145; Please update to a Selenium version that supports CDP version 146
+]]></system-err>
+  </testcase>
+  <testcase name="runScenario[&quot;&quot;, &quot;Unknown&quot;](3)" classname="runners.Runner" time="10.154">
+    <failure message="expected [true] but found [false]" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at org.testng.Assert.assertTrue(Assert.java:67)
+	at steps.DistrictStep.I_should_see_the_search_results_for(DistrictStep.java:45)
+	at ✽.I should see the search results for "Super Duperr123"(file:///C:/Users/parth/eclipse-workspace/Maven-BDD-ITV/src/test/resources/features/District.feature:21)
+]]></failure>
+    <system-out><![CDATA[
+@SmokeTest
+&amp#27;[1mScenario Outline:&amp#27;[22m                                              &amp#27;[90m# src/test/resources/features/District.feature:27&amp#27;[39m
+16:57:39 [main] INFO  utils.LoggerUtils - Launched the application
+16:57:39 [main] INFO  utils.LoggerUtils - I am on the District.in home page
+  &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mGiven &amp#27;[22mI am on the District.in home page&amp#27;[39m                    &amp#27;[90m# steps.DistrictStep.I_am_on_the_District_in_home_page()&amp#27;[39m
+16:57:39 [main] INFO  utils.LoggerUtils - Clicked on Search icon
+16:57:39 [main] INFO  utils.LoggerUtils - I clicked on the Search icon
+  &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mWhen &amp#27;[22mI click on the Search icon&amp#27;[39m                            &amp#27;[90m# steps.DistrictStep.I_click_on_the_Search_icon()&amp#27;[39m
+16:57:39 [main] ERROR utils.LoggerUtils - Element is not displayed
+16:57:39 [main] INFO  utils.LoggerUtils - Clicked on Movies link
+16:57:39 [main] INFO  utils.LoggerUtils - I clicked on the Movies link
+  &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mAnd &amp#27;[22mI click on the Movies link&amp#27;[39m                             &amp#27;[90m# steps.DistrictStep.I_click_on_the_Movies_link()&amp#27;[39m
+16:57:39 [main] INFO  utils.LoggerUtils - Entered Super Duperr in the search editbox
+16:57:39 [main] INFO  utils.LoggerUtils - I entered Super Duperr in the search box
+  &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mAnd &amp#27;[22mI enter &amp#27;[1m"Super Duperr"&amp#27;[22m in the search box&amp#27;[39m               &amp#27;[90m# steps.DistrictStep.I_enter_in_the_search_box(java.lang.String)&amp#27;[39m
+16:57:43 [main] INFO  utils.LoggerUtils - Extracted Search Result text as Super Duperr
+  &amp#27;[31m✘&amp#27;[39m &amp#27;[31m&amp#27;[1mThen &amp#27;[22mI should see the search results for &amp#27;[1m"Super Duperr123"&amp#27;[22m&amp#27;[39m &amp#27;[90m# steps.DistrictStep.I_should_see_the_search_results_for(java.lang.String)&amp#27;[39m
+        &amp#27;[31mjava.lang.AssertionError: expected [true] but found [false]&amp#27;[39m
+        &amp#27;[31m	at org.testng.Assert.fail(Assert.java:111)&amp#27;[39m
+        &amp#27;[31m	at org.testng.Assert.failNotEquals(Assert.java:1590)&amp#27;[39m
+        &amp#27;[31m	at org.testng.Assert.assertTrue(Assert.java:57)&amp#27;[39m
+        &amp#27;[31m	at org.testng.Assert.assertTrue(Assert.java:67)&amp#27;[39m
+        &amp#27;[31m	at steps.DistrictStep.I_should_see_the_search_results_for(DistrictStep.java:45)&amp#27;[39m
+        &amp#27;[31m	at ✽.I should see the search results for "Super Duperr123"(file:///C:/Users/parth/eclipse-workspace/Maven-BDD-ITV/src/test/resources/features/District.feature:21)&amp#27;[39m
+
+        &amp#27;[34mEmbedding  [image/png 428430 bytes]&amp#27;[39m
+
+16:57:44 [main] INFO  utils.LoggerUtils - Scenario  failed. Screenshot captured.
+16:57:44 [main] INFO  utils.LoggerUtils - Closed the browser
+]]></system-out>
+    <system-err><![CDATA[Apr 07, 2026 4:57:35 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 146, returning the closest version; found: 145; Please update to a Selenium version that supports CDP version 146
+]]></system-err>
+  </testcase>
+</testsuite>
