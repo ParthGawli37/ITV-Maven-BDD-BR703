@@ -8,7 +8,9 @@ import java.util.Locale;
 import java.util.regex.Pattern;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -30,6 +32,7 @@ public class MovieBookingPage extends BaseClass {
             "(?i).*\\b\\d{1,2}:\\d{2}\\s*(am|pm)\\b.*");
     private static final Pattern UNAVAILABLE = Pattern.compile(
             "(?i).*(unavailable|occupied|booked|blocked|disabled|sold|not.?available).*");
+    private static final int CLICK_RETRIES = 2;
 
     private String selectedMovie;
     private String selectedTheatre;
@@ -90,10 +93,6 @@ public class MovieBookingPage extends BaseClass {
         LoggerUtils.info("Selected date: " + selectedDate);
     }
 
-    /**
-     * Finds a theatre that has a usable showtime and remembers that exact
-     * showtime so the later showtime step cannot accidentally switch theatres.
-     */
     public void selectFirstTheatreWithAvailableShowtime() {
         List<WebElement> showtimes = findAvailableShowtimes();
         Assert.assertFalse(showtimes.isEmpty(),
@@ -319,13 +318,35 @@ public class MovieBookingPage extends BaseClass {
         }
     }
 
+    /** Retries a click only for transient Selenium interaction failures. */
     private void clickSafely(WebElement element) {
-        ((JavascriptExecutor) driver).executeScript(
-                "arguments[0].scrollIntoView({block:'center',inline:'center'});", element);
+        RuntimeException lastFailure = null;
+
+        for (int attempt = 1; attempt <= CLICK_RETRIES; attempt++) {
+            try {
+                ((JavascriptExecutor) driver).executeScript(
+                        "arguments[0].scrollIntoView({block:'center',inline:'center'});", element);
+                try {
+                    element.click();
+                } catch (ElementClickInterceptedException | StaleElementReferenceException e) {
+                    lastFailure = e;
+                    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+                }
+                return;
+            } catch (StaleElementReferenceException | ElementClickInterceptedException e) {
+                lastFailure = e;
+                pause(300L * attempt);
+            }
+        }
+        throw lastFailure;
+    }
+
+    private void pause(long millis) {
         try {
-            element.click();
-        } catch (Exception e) {
-            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            throw new IllegalStateException("Click retry wait was interrupted", e);
         }
     }
 
