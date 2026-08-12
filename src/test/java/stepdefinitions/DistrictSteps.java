@@ -21,6 +21,11 @@ public class DistrictSteps {
         homePage.openMoviesSection();
     }
 
+    @Then("at least 3 current movies should be listed")
+    public void verify_current_movies() {
+        bookingPage.assertCurrentMoviesAvailable();
+    }
+
     @When("I select a current top movie")
     public void select_current_top_movie() {
         bookingPage.selectCurrentTopMovie();
