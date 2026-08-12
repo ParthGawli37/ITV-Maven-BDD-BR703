@@ -10,7 +10,6 @@ import java.util.regex.Pattern;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
@@ -20,8 +19,8 @@ import utils.LoggerUtils;
 /**
  * District.in movie booking flow.
  *
- * The page intentionally discovers the current movie, theatre, date, showtime
- * and available seats at runtime instead of hard-coding today's movie data.
+ * The page intentionally discovers current movie, theatre, date, showtime and
+ * available seats at runtime instead of hard-coding today's movie data.
  */
 public class MovieBookingPage extends BaseClass {
 
@@ -30,7 +29,7 @@ public class MovieBookingPage extends BaseClass {
     private static final Pattern TIME_TEXT = Pattern.compile(
             "(?i).*\\b\\d{1,2}:\\d{2}\\s*(am|pm)\\b.*");
     private static final Pattern UNAVAILABLE = Pattern.compile(
-            "(?i).*(unavailable|occupied|booked|blocked|disabled|sold|not.?available).*" );
+            "(?i).*(unavailable|occupied|booked|blocked|disabled|sold|not.?available).*");
 
     private String selectedMovie;
     private String selectedTheatre;
@@ -39,6 +38,14 @@ public class MovieBookingPage extends BaseClass {
 
     public MovieBookingPage() {
         super();
+    }
+
+    public void assertCurrentMoviesAvailable() {
+        By movieLinks = By.xpath(
+                "//a[contains(@href,'/movies/') and contains(@href,'-movie-tickets-in-')]");
+        int count = visibleElements(movieLinks).size();
+        Assert.assertTrue(count >= 3, "Expected at least 3 current movie cards, but found " + count);
+        LoggerUtils.info("Current movie cards detected: " + count);
     }
 
     public void selectCurrentTopMovie() {
@@ -66,7 +73,6 @@ public class MovieBookingPage extends BaseClass {
 
         WebElement showtime = showtimes.get(0);
         selectedTheatre = inferTheatreName(showtime);
-        selectedShowtime = cleanText(showtime.getText());
         LoggerUtils.info("Selected theatre candidate: " + selectedTheatre);
     }
 
@@ -132,11 +138,11 @@ public class MovieBookingPage extends BaseClass {
 
     public void clickProceedOrCheckIn() {
         By proceed = By.xpath(
-                "//*[self::button or @role='button' or self::a]" +
-                "[contains(translate(normalize-space(.)," +
-                "'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'proceed')" +
-                " or contains(translate(normalize-space(.)," +
-                "'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'check in')]");
+                "//*[self::button or @role='button' or self::a]"
+                + "[contains(translate(normalize-space(.),"
+                + "'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'proceed')"
+                + " or contains(translate(normalize-space(.),"
+                + "'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'check in')]");
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         WebElement button = wait.until(d -> {
@@ -168,10 +174,6 @@ public class MovieBookingPage extends BaseClass {
                 "Proceed/Check In was clicked, but the next booking step could not be detected. URL=" + url);
     }
 
-    public String getSelectedMovie() {
-        return selectedMovie;
-    }
-
     private List<WebElement> findAvailableShowtimes() {
         List<WebElement> result = new ArrayList<>();
         List<WebElement> candidates = driver.findElements(
@@ -195,9 +197,9 @@ public class MovieBookingPage extends BaseClass {
         for (WebElement seat : candidates) {
             if (!isUsable(seat)) continue;
 
-            String metadata = ((cleanText(seat.getAttribute("aria-label")) + " "
+            String metadata = (cleanText(seat.getAttribute("aria-label")) + " "
                     + cleanText(seat.getAttribute("class")) + " "
-                    + cleanText(seat.getAttribute("data-seat-status")))).toLowerCase(Locale.ROOT);
+                    + cleanText(seat.getAttribute("data-seat-status"))).toLowerCase(Locale.ROOT);
 
             if (UNAVAILABLE.matcher(metadata).matches()) continue;
 
