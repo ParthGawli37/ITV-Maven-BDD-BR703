@@ -10,8 +10,13 @@ import utils.RetryListener;
 @CucumberOptions(
     features = "src/test/resources/features",
     glue = {"stepdefinitions", "hooks"},
-    plugin = {"pretty", "html:target/cucumber-report.html"},
-    tags = "@SmokeTest or @RegressionTest"
+    plugin = {
+        "pretty",
+        "html:target/cucumber-report.html",
+        "json:target/cucumber.json",
+        "junit:target/cucumber.xml"
+    },
+    monochrome = true
 )
 public class Runner extends AbstractTestNGCucumberTests {
 }
