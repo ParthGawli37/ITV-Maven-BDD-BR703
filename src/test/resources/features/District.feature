@@ -12,8 +12,8 @@ Feature: District.in movie booking
   @RegressionTest
   Scenario: Book two seats for a current movie up to the proceed step
     And I select a current top movie
-    And I select the first theatre with an available showtime
     And I select the first available date
+    And I select the first theatre with an available showtime
     And I select the earliest available showtime
     Then at least 2 seats should be available
     When I select the best adjacent seats for 2 people
