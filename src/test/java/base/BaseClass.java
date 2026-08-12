@@ -2,6 +2,8 @@ package base;
 
 import java.time.Duration;
 
+import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -18,6 +20,7 @@ import utils.ConfigReader;
 public class BaseClass {
 
     protected static WebDriver driver;
+    private static final int ACTION_RETRIES = 2;
 
     public static void initDriver() {
         String browser = System.getProperty("browser", ConfigReader.get("browser"));
@@ -63,21 +66,52 @@ public class BaseClass {
         }
     }
 
+    /** Retries only transient Selenium interaction failures, not assertions. */
     public void elementClick(WebElement element) {
-        new WebDriverWait(driver, Duration.ofSeconds(15))
-                .until(ExpectedConditions.elementToBeClickable(element)).click();
+        RuntimeException lastFailure = null;
+        for (int attempt = 1; attempt <= ACTION_RETRIES; attempt++) {
+            try {
+                new WebDriverWait(driver, Duration.ofSeconds(15))
+                        .until(ExpectedConditions.elementToBeClickable(element)).click();
+                return;
+            } catch (StaleElementReferenceException | ElementClickInterceptedException e) {
+                lastFailure = e;
+                pause(300L * attempt);
+            }
+        }
+        throw lastFailure;
     }
 
+    /** Retries only transient stale-element failures; validation/assertions are untouched. */
     public void enterText(WebElement element, String text) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-        WebElement el = wait.until(ExpectedConditions.visibilityOf(element));
-        el.clear();
-        el.sendKeys(text);
+        RuntimeException lastFailure = null;
+        for (int attempt = 1; attempt <= ACTION_RETRIES; attempt++) {
+            try {
+                WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+                WebElement el = wait.until(ExpectedConditions.visibilityOf(element));
+                el.clear();
+                el.sendKeys(text);
+                return;
+            } catch (StaleElementReferenceException e) {
+                lastFailure = e;
+                pause(300L * attempt);
+            }
+        }
+        throw lastFailure;
     }
 
     public void waitForPageLoad() {
         new WebDriverWait(driver, Duration.ofSeconds(30)).until(
                 d -> ((org.openqa.selenium.JavascriptExecutor) d)
                         .executeScript("return document.readyState").equals("complete"));
+    }
+
+    private void pause(long millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            throw new IllegalStateException("Retry wait was interrupted", e);
+        }
     }
 }
