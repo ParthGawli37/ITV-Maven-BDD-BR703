@@ -39,28 +39,25 @@ public class HomePage extends BaseClass {
         LoggerUtils.info("Opened District.in: " + url);
     }
 
-    /**
-     * Uses District's visible location control rather than relying on a
-     * location-specific URL. If the location is already Mumbai, the method
-     * leaves it unchanged.
-     */
+    /** Uses District's visible location control rather than relying on a location-specific URL. */
     public void ensureMumbaiLocation() {
         WebDriverWait wait = new WebDriverWait(driver(), Duration.ofSeconds(10));
-        String body = driver().findElement(By.tagName("body")).getText().toLowerCase(Locale.ROOT);
-        if (body.contains("mumbai") && !hasVisibleLocationPicker()) {
-            LoggerUtils.info("Mumbai already appears to be the active District location");
-            return;
-        }
-
         List<WebElement> triggers = driver().findElements(By.xpath(
                 "//*[contains(translate(normalize-space(.),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'select location')"
                 + " or @aria-label='Select Location']"));
         WebElement trigger = firstVisible(triggers);
-        if (trigger != null) {
-            click(trigger);
+
+        if (trigger == null) {
+            String body = driver().findElement(By.tagName("body")).getText().toLowerCase(Locale.ROOT);
+            Assert.assertTrue(body.contains("mumbai"),
+                    "District location control was not found and Mumbai could not be confirmed on the page");
+            LoggerUtils.info("Mumbai appears to be the active District location");
+            return;
         }
 
-        WebElement locationSearch = waitForSearchInput(wait, "location");
+        click(trigger);
+
+        WebElement locationSearch = waitForSearchInput(wait);
         if (locationSearch != null) {
             locationSearch.clear();
             locationSearch.sendKeys("Mumbai");
@@ -99,7 +96,7 @@ public class HomePage extends BaseClass {
             click(searchTrigger);
         }
 
-        WebElement input = waitForSearchInput(wait, "movie");
+        WebElement input = waitForSearchInput(wait);
         Assert.assertNotNull(input, "District search input was not found");
         input.clear();
         input.sendKeys(movieTitle);
@@ -109,7 +106,6 @@ public class HomePage extends BaseClass {
     }
 
     public void clickMoviesSearchFilter() {
-        WebDriverWait wait = new WebDriverWait(driver(), Duration.ofSeconds(8));
         List<WebElement> candidates = driver().findElements(By.xpath(
                 "//*[@role='dialog']//*[self::button or @role='tab' or self::a or self::div][normalize-space()='Movies']"
                 + " | //*[@role='tab'][normalize-space()='Movies']"
@@ -122,7 +118,6 @@ public class HomePage extends BaseClass {
         }
 
         click(movies);
-        wait.until(d -> !findMovieResultsFromPage(driver()).isEmpty());
         LoggerUtils.info("Selected Movies in District search");
     }
 
@@ -138,12 +133,16 @@ public class HomePage extends BaseClass {
         Assert.assertNotNull(result, "Movie search result not found: " + movieTitle);
         click(result);
         waitForPageLoad();
-
-        String pageText = driver().findElement(By.tagName("body")).getText().toLowerCase(Locale.ROOT);
-        Assert.assertTrue(pageText.contains(movieTitle.toLowerCase(Locale.ROOT))
-                        || driver().getCurrentUrl().toLowerCase(Locale.ROOT).contains(slug(movieTitle)),
-                "Opened page does not appear to be for movie: " + movieTitle + " | URL=" + driver().getCurrentUrl());
+        assertMoviePageOpen(movieTitle);
         LoggerUtils.info("Opened movie page: " + movieTitle + " | URL=" + driver().getCurrentUrl());
+    }
+
+    public void assertMoviePageOpen(String movieTitle) {
+        String pageText = driver().findElement(By.tagName("body")).getText().toLowerCase(Locale.ROOT);
+        String url = driver().getCurrentUrl().toLowerCase(Locale.ROOT);
+        String normalizedTitle = movieTitle.toLowerCase(Locale.ROOT);
+        Assert.assertTrue(pageText.contains(normalizedTitle) || url.contains(slug(movieTitle)),
+                "Opened page does not appear to be for movie: " + movieTitle + " | URL=" + url);
     }
 
     private List<WebElement> findMovieResults(String movieTitle) {
@@ -154,13 +153,7 @@ public class HomePage extends BaseClass {
                 + "'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'))]"));
     }
 
-    private List<WebElement> findMovieResultsFromPage(WebDriver driver) {
-        return driver.findElements(By.xpath(
-                "//*[self::a or self::button or @role='button' or @role='link'][contains(translate(normalize-space(.),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'spider-man')"
-                + " or contains(translate(normalize-space(.),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'the odyssey')]"));
-    }
-
-    private WebElement waitForSearchInput(WebDriverWait wait, String kind) {
+    private WebElement waitForSearchInput(WebDriverWait wait) {
         return wait.until(d -> {
             for (WebElement input : d.findElements(By.xpath(
                     "//input[contains(translate(@placeholder,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'search')]"
@@ -169,12 +162,6 @@ public class HomePage extends BaseClass {
             }
             return null;
         });
-    }
-
-    private boolean hasVisibleLocationPicker() {
-        return firstVisible(driver().findElements(By.xpath(
-                "//*[contains(translate(normalize-space(.),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'select location')"
-                + " or @aria-label='Select Location']"))) != null;
     }
 
     private WebElement firstVisible(List<WebElement> elements) {
