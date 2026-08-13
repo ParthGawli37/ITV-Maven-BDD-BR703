@@ -3,8 +3,10 @@ package pages;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.regex.Pattern;
 
 import org.openqa.selenium.By;
@@ -21,8 +23,8 @@ import utils.LoggerUtils;
 /**
  * District.in movie booking flow.
  *
- * Current movie, theatre, date, showtime and seat data are discovered at
- * runtime so the test does not depend on a stale movie title.
+ * Movie, theatre, date, showtime and seat data are discovered at runtime so
+ * the test does not depend on a stale movie title or a guessed movie URL.
  */
 public class MovieBookingPage extends BaseClass {
 
@@ -44,29 +46,68 @@ public class MovieBookingPage extends BaseClass {
         super();
     }
 
+    /**
+     * District's live Mumbai movie page currently renders movie links under
+     * the "Only in Theatres" heading. The old locator additionally required a
+     * guessed '-movie-tickets-in-' URL suffix, which caused all browsers to
+     * report zero movies when District changed its URL format.
+     */
     private By currentMovieLinks() {
         return By.xpath(
-                "//*[self::h1 or self::h2 or self::h3 or self::h4][contains(normalize-space(.),'Only in Theatres')]"
-                + "/following::a[contains(@href,'/movies/') and contains(@href,'-movie-tickets-in-')]");
+                "//*[self::h1 or self::h2 or self::h3 or self::h4]"
+                + "[contains(translate(normalize-space(.),"
+                + "'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'only in theatres')]"
+                + "/ancestor::*[.//a[contains(@href,'/movies/')]][1]"
+                + "//a[contains(@href,'/movies/') and normalize-space()]"
+        );
+    }
+
+    private List<WebElement> currentMovieElements() {
+        Map<String, WebElement> uniqueMovies = new LinkedHashMap<>();
+        for (WebElement link : driver.findElements(currentMovieLinks())) {
+            if (!isUsable(link)) continue;
+
+            String href = cleanText(link.getAttribute("href"));
+            String text = cleanText(link.getText());
+            String key = !href.isBlank() ? href : text;
+
+            if (!key.isBlank() && !text.isBlank()) {
+                uniqueMovies.putIfAbsent(key, link);
+            }
+        }
+        return new ArrayList<>(uniqueMovies.values());
+    }
+
+    private List<WebElement> waitForCurrentMovies(int minimum) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        return wait.until(d -> {
+            List<WebElement> movies = currentMovieElements();
+            return movies.size() >= minimum ? movies : null;
+        });
     }
 
     public void assertCurrentMoviesAvailable() {
-        int count = visibleElements(currentMovieLinks()).size();
-        Assert.assertTrue(count >= 3,
-                "Expected at least 3 current movies in 'Only in Theatres', but found " + count);
-        LoggerUtils.info("Current movie cards detected: " + count);
+        List<WebElement> movies = waitForCurrentMovies(3);
+        Assert.assertTrue(movies.size() >= 3,
+                "Expected at least 3 current movies in 'Only in Theatres', but found " + movies.size());
+        LoggerUtils.info("Current movie cards detected: " + movies.size());
+        for (int i = 0; i < Math.min(movies.size(), 10); i++) {
+            LoggerUtils.info("Current movie " + (i + 1) + ": " + cleanText(movies.get(i).getText()));
+        }
     }
 
     public void selectCurrentTopMovie() {
-        List<WebElement> links = visibleElements(currentMovieLinks());
+        List<WebElement> links = waitForCurrentMovies(1);
         Assert.assertFalse(links.isEmpty(), "No current movie cards were found in 'Only in Theatres'");
 
         WebElement movie = links.get(0);
         selectedMovie = cleanText(movie.getText());
         if (selectedMovie.isBlank()) {
-            selectedMovie = movie.getAttribute("aria-label");
+            selectedMovie = cleanText(movie.getAttribute("aria-label"));
         }
 
+        String href = cleanText(movie.getAttribute("href"));
+        LoggerUtils.info("Selecting current movie: " + selectedMovie + " | href=" + href);
         clickSafely(movie);
         waitForPageLoad();
         LoggerUtils.info("Selected current movie: " + selectedMovie);
@@ -300,14 +341,6 @@ public class MovieBookingPage extends BaseClass {
     private void waitForSeatMap() {
         new WebDriverWait(driver, Duration.ofSeconds(30))
                 .until(d -> !findAvailableSeats().isEmpty());
-    }
-
-    private List<WebElement> visibleElements(By locator) {
-        List<WebElement> result = new ArrayList<>();
-        for (WebElement element : driver.findElements(locator)) {
-            if (isUsable(element)) result.add(element);
-        }
-        return result;
     }
 
     private boolean isUsable(WebElement element) {
