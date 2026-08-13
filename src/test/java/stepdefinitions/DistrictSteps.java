@@ -43,7 +43,7 @@ public class DistrictSteps {
 
     @Then("the {string} movie page should be open")
     public void verify_movie_page(String movieTitle) {
-        bookingPage.assertMoviePageOpen(movieTitle);
+        homePage.assertMoviePageOpen(movieTitle);
     }
 
     @Then("at least 3 current movies should be listed")
