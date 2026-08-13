@@ -1,17 +1,27 @@
 Feature: District.in movie booking
-  End-to-end validation of the current movie listing and movie-ticket booking flow.
-
-  Background:
-    Given I am on the District.in home page
-    When I open the Movies section
+  Validate District's real user journey from location selection and search to movie booking.
 
   @SmokeTest
-  Scenario: Current movies are available for booking
-    Then at least 3 current movies should be listed
+  Scenario Outline: Search for a current movie in Mumbai
+    Given I am on the District.in home page
+    And Mumbai is the selected District location
+    When I search for the movie "<movie>"
+    And I select Movies in the search results
+    And I open the movie "<movie>" from the search results
+    Then the "<movie>" movie page should be open
+
+    Examples:
+      | movie                      |
+      | Spider-Man: Brand New Day  |
+      | The Odyssey                |
 
   @RegressionTest
-  Scenario: Book two seats for a current movie up to the proceed step
-    And I select a current top movie
+  Scenario Outline: Book two seats for a selected current movie up to the proceed step
+    Given I am on the District.in home page
+    And Mumbai is the selected District location
+    When I search for the movie "<movie>"
+    And I select Movies in the search results
+    And I open the movie "<movie>" from the search results
     And I select the first available date
     And I select the first theatre with an available showtime
     And I select the earliest available showtime
@@ -19,3 +29,8 @@ Feature: District.in movie booking
     When I select the best adjacent seats for 2 people
     And I click the Proceed or Check In button
     Then the booking flow should continue to the next step
+
+    Examples:
+      | movie                      |
+      | Spider-Man: Brand New Day  |
+      | The Odyssey                |
