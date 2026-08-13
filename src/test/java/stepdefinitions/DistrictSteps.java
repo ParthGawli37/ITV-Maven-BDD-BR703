@@ -16,9 +16,34 @@ public class DistrictSteps {
         homePage.openHomePage();
     }
 
+    @Given("Mumbai is the selected District location")
+    public void select_mumbai_location() {
+        homePage.ensureMumbaiLocation();
+    }
+
     @When("I open the Movies section")
     public void open_movies_section() {
         homePage.openMoviesSection();
+    }
+
+    @When("I search for the movie {string}")
+    public void search_for_movie(String movieTitle) {
+        homePage.searchMovie(movieTitle);
+    }
+
+    @When("I select Movies in the search results")
+    public void select_movies_in_search() {
+        homePage.clickMoviesSearchFilter();
+    }
+
+    @When("I open the movie {string} from the search results")
+    public void open_movie_from_search(String movieTitle) {
+        homePage.openMovieFromSearch(movieTitle);
+    }
+
+    @Then("the {string} movie page should be open")
+    public void verify_movie_page(String movieTitle) {
+        bookingPage.assertMoviePageOpen(movieTitle);
     }
 
     @Then("at least 3 current movies should be listed")
