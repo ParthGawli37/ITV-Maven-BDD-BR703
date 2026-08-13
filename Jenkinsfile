@@ -17,18 +17,13 @@ pipeline {
     parameters {
         choice(
             name: 'BROWSER',
-            choices: ['ALL', 'chrome', 'edge', 'firefox'],
+            choices: ['chrome', 'edge', 'firefox', 'ALL'],
             description: 'Browser to execute. ALL runs Chrome, Edge and Firefox.'
         )
         choice(
             name: 'TEST_SCOPE',
             choices: ['@SmokeTest or @RegressionTest', '@SmokeTest', '@RegressionTest'],
             description: 'Cucumber tag expression to execute.'
-        )
-        booleanParam(
-            name: 'HEADLESS',
-            defaultValue: true,
-            description: 'Run browsers headlessly. Recommended for scheduled/CI execution.'
         )
     }
 
@@ -71,7 +66,9 @@ pipeline {
                                 checkout scm
 
                                 catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
-                                    def command = "mvn -B clean test -Dbrowser=${selectedBrowser} -Dheadless=${params.HEADLESS} -Dcucumber.filter.tags=\"${params.TEST_SCOPE}\""
+                                    // Headless execution is deliberately disabled for diagnosis.
+                                    // The framework/configuration default is headless=false.
+                                    def command = "mvn -B clean test -Dbrowser=${selectedBrowser} -Dcucumber.filter.tags=\"${params.TEST_SCOPE}\""
                                     if (isUnix()) {
                                         sh label: "Run ${selectedBrowser}", script: command
                                     } else {
@@ -135,7 +132,7 @@ pipeline {
 
     post {
         always {
-            echo "Build completed. Browser=${params.BROWSER}, Scope=${params.TEST_SCOPE}, Headless=${params.HEADLESS}"
+            echo "Build completed. Browser=${params.BROWSER}, Scope=${params.TEST_SCOPE}, Headless=false"
         }
         success {
             echo 'All selected browser executions passed.'
